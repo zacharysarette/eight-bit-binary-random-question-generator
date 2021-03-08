@@ -21,4 +21,4 @@ const generateQuestionAndAnswer = (r = getRandom8bit()) => ({
   a: getBinToDecAnswer(r)
 })
 
-generateQuestionAndAnswer()
+export default generateQuestionAndAnswer
