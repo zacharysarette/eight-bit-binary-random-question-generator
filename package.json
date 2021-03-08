@@ -4,8 +4,12 @@
   "description": "A simple tool to help you easily create eight bit binary questions",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard  --fix"
   },
   "author": "Zachary William Sarette",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
 }
