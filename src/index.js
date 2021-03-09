@@ -30,13 +30,13 @@ const generateQuestionAndAnswer = (
     q: generateBinToDecQuestion(r),
     a: getBinToDec(r),
     multipleChoice:
-      isMultipleChoice && getBinMultiChoice.map((e) => getBinToDec(e))
+      isMultipleChoice && getBinMultiChoice().map((e) => getBinToDec(e))
   })
 
   const generateDecToBinQuestionAndAnswer = (r = getRandom8bit()) => ({
     q: generateDecToBinQuestion(getBinToDec(r)),
     a: r.join(''),
-    multipleChoice: isMultipleChoice && getBinMultiChoice
+    multipleChoice: isMultipleChoice && getBinMultiChoice()
   })
 
   const getBinMultiChoice = (bin) => {
