@@ -27,7 +27,7 @@ const generateQuestionAndAnswer = (type = 'binToDec') => {
 
   const generateDecToBinQuestionAndAnswer = (r = getRandom8bit()) => ({
     q: generateDecToBinQuestion(getBinToDec(r)),
-    a: r
+    a: r.join('')
   })
 
   return type === 'binToDec'
