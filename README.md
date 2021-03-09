@@ -1,4 +1,4 @@
-# JSON RANDOM DATA GENERATOR
+# Eight Bit Binary Random Question Generator
 
 ---
 
