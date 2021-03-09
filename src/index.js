@@ -36,8 +36,7 @@ const generateQuestionAndAnswer = (
   const generateDecToBinQuestionAndAnswer = (r = getRandom8bit()) => ({
     q: generateDecToBinQuestion(getBinToDec(r)),
     a: r.join(''),
-    multipleChoice:
-      isMultipleChoice && getBinMultiChoice.map((e) => getBinToDec(e))
+    multipleChoice: isMultipleChoice && getBinMultiChoice
   })
 
   const getBinMultiChoice = (bin) => {
@@ -53,14 +52,14 @@ const generateQuestionAndAnswer = (
       shuffled[5]
     ])
 
-    return {
+    return ({
       a: answers[0],
       b: answers[1],
       c: answers[3],
       d: answers[4],
       e: answers[5],
       f: answers[6]
-    }
+    })
   }
 
   return type === 'binToDec'
