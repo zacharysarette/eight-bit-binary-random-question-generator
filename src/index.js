@@ -1,4 +1,10 @@
-const generateQuestionAndAnswer = (type = 'binToDec') => {
+import shuffle from './shuffle'
+import getBins from './const/getBins'
+
+const generateQuestionAndAnswer = (
+  type = 'binToDec',
+  isMultipleChoice = true
+) => {
   const binToDecArr = [128, 64, 32, 16, 8, 4, 2, 1]
 
   const getRandom8bit = () => {
@@ -22,13 +28,40 @@ const generateQuestionAndAnswer = (type = 'binToDec') => {
 
   const generateBinToDecQuestionAndAnswer = (r = getRandom8bit()) => ({
     q: generateBinToDecQuestion(r),
-    a: getBinToDec(r)
+    a: getBinToDec(r),
+    multipleChoice:
+      isMultipleChoice && getBinMultiChoice.map((e) => getBinToDec(e))
   })
 
   const generateDecToBinQuestionAndAnswer = (r = getRandom8bit()) => ({
     q: generateDecToBinQuestion(getBinToDec(r)),
-    a: r.join('')
+    a: r.join(''),
+    multipleChoice:
+      isMultipleChoice && getBinMultiChoice.map((e) => getBinToDec(e))
   })
+
+  const getBinMultiChoice = (bin) => {
+    const shuffled = shuffle(getBins())
+
+    const answers = shuffle([
+      bin,
+      shuffled[0],
+      shuffled[1],
+      shuffled[2],
+      shuffled[3],
+      shuffled[4],
+      shuffled[5]
+    ])
+
+    return {
+      a: answers[0],
+      b: answers[1],
+      c: answers[3],
+      d: answers[4],
+      e: answers[5],
+      f: answers[6]
+    }
+  }
 
   return type === 'binToDec'
     ? generateBinToDecQuestionAndAnswer()
