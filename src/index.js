@@ -30,16 +30,16 @@ const generateQuestionAndAnswer = (
     q: generateBinToDecQuestion(r),
     a: getBinToDec(r),
     multipleChoice:
-      isMultipleChoice && getBinMultiChoice(r, true)
+      isMultipleChoice && getBinMultiChoice(r.join(''), true)
   })
 
   const generateDecToBinQuestionAndAnswer = (r = getRandom8bit()) => ({
     q: generateDecToBinQuestion(getBinToDec(r)),
     a: r.join(''),
-    multipleChoice: isMultipleChoice && getBinMultiChoice(r)
+    multipleChoice: isMultipleChoice && getBinMultiChoice(r.join(''))
   })
 
-  const getBinMultiChoice = (bin, isDec = false) => {
+  const getBinMultiChoice = (bin="00000001", isDec = false) => {
     const shuffled = shuffle(getBins())
 
     const answers = shuffle([
@@ -53,12 +53,12 @@ const generateQuestionAndAnswer = (
     ])
 
     return ({
-      a: isDec ? getBinToDec(answers[0]): answers[0],
-      b: isDec ? getBinToDec(answers[1]): answers[1],
-      c: isDec ? getBinToDec(answers[2]): answers[2],
-      d: isDec ? getBinToDec(answers[3]): answers[3],
-      e: isDec ? getBinToDec(answers[4]): answers[4],
-      f: isDec ? getBinToDec(answers[5]): answers[5],
+      a: isDec ? getBinToDec(answers[0].split("")): answers[0],
+      b: isDec ? getBinToDec(answers[1].split("")): answers[1],
+      c: isDec ? getBinToDec(answers[2].split("")): answers[2],
+      d: isDec ? getBinToDec(answers[3].split("")): answers[3],
+      e: isDec ? getBinToDec(answers[4].split("")): answers[4],
+      f: isDec ? getBinToDec(answers[5].split("")): answers[5],
     })
   }
 
