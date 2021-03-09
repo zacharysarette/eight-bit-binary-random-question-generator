@@ -44,8 +44,7 @@ const generateQuestionAndAnswer = (type = '', isMultipleChoice = true) => {
       shuffled[1],
       shuffled[2],
       shuffled[3],
-      shuffled[4],
-      shuffled[5]
+      shuffled[4]
     ])
 
     return {
