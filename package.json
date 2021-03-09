@@ -1,13 +1,13 @@
 {
   "name": "eight-bit-binary-random-question-generator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple tool to help you easily create eight bit binary questions",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "standard  --fix"
   },
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/zacharysarette/eight-bit-binary-random-question-generator.git"
   },
