@@ -1,6 +1,6 @@
 {
   "name": "eight-bit-binary-random-question-generator",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "A simple tool to help you easily create eight bit binary questions",
   "main": "./src/index.js",
   "scripts": {
