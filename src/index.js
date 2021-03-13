@@ -36,7 +36,7 @@ const generateQuestionAndAnswer = (type = '', isMultipleChoice = true) => {
   })
 
   const getBinMultiChoice = (bin = '00000001', isDec = false) => {
-    const shuffled = shuffle(getBins())
+    const shuffled = shuffle(getBins().filter(e => e !== bin))
 
     const answers = shuffle([
       bin,
@@ -56,6 +56,7 @@ const generateQuestionAndAnswer = (type = '', isMultipleChoice = true) => {
       f: isDec ? getBinToDec(answers[5].split('')) : answers[5]
     }
   }
+  
   const getRandBool = () => Math.random() > 0.5
 
   if (type === 'decToBin') return generateDecToBinQuestionAndAnswer()
